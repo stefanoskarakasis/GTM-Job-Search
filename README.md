@@ -18,14 +18,15 @@ Job boards give you listings. This gives you a **short list you can trust**: lin
 - **10+ years in:** marketing engineer, PMM, RevOps or product leader. You get a terse shortlist and questions about scale, not basics.
 - **Switching in** from sales, marketing, product, data or engineering.
 
-## What you get
+## How it works
 
-- **Five-question onboarding:** target role, work you want and want to avoid, seniority with proof, location and work authorization, salary band.
-- **Roles from the source:** company job sites first. LinkedIn, Indeed and TrueUp are leads only, so you **never get an aggregator link**.
-- **Default pool, then a wider net:** a curated pool of forward-looking companies, then a wider pool, then the open web. Every role is labelled with where it came from.
-- **Checked live:** original posting date, pay **only when the posting lists it**, and every "Remote" role vetted for its real region.
-- **Company momentum:** funding, headcount growth, open GTM roles, layoffs and news, ending in **Rising, Steady, Cooling or Unclear** with the evidence.
-- **Tailored resume** for one posting across 8 role types. **Gaps are reported, never filled.**
+1. **Onboard in five questions.** Target role, work you want and want to avoid, seniority with proof, location and work authorization, salary band. **Add your resume and it fills the answers for you.** You confirm a profile card before anything is searched.
+2. **Search the source.** Company job sites first, from a curated pool drawn from weekly AI GTM job trackers and live listings, including Anthropic, OpenAI, Clay and Harvey. LinkedIn, Indeed and TrueUp are leads only, so you **never get an aggregator link**. A wider pool and the open web follow, and every role is labelled with where it came from.
+3. **Check every role.** Each posting is re-read live: original posting date, pay **only when the posting lists it**, and every "Remote" role vetted for its real region.
+4. **See momentum before you apply.** Pick up to 3 companies and get **Rising, Steady, Cooling or Unclear**, with the funding, headcount, layoffs and news behind it.
+5. **Tailor your resume** to one posting across 8 role types. **Gaps are reported, never filled.**
+
+**Get the best results:** bring your resume, name 2-3 things you built with a number, say what work to avoid, and state your location and work authorization up front. Paste your profile card next time to skip onboarding.
 
 ## Installation
 
@@ -137,6 +138,10 @@ Contributions are welcome. The most useful ones:
 - **Bugs:** open an issue with what you asked, what you got, and which Claude surface you used.
 
 Before opening a pull request, run `bash tests/run_checks.sh`. **Keep the honesty rules:** no invented facts, no estimated salaries, no aggregator links. See the [changelog](CHANGELOG.md) for what has shipped.
+
+## Privacy
+
+**Nothing is sent anywhere except plain requests to companies' public job feeds.** Where Claude can save files (Claude Code), your profile lives in `~/.gtm-job-search/` on your machine. In the Claude app you keep your profile card as text. Your resume goes to Claude the way any file you share in a chat does. Say **"forget me"** and a saved profile is deleted.
 
 ## License
 
