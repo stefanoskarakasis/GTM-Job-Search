@@ -27,8 +27,6 @@ It then researches the companies you pick, using public data on funding, headcou
 - **Company momentum.** For roles you pick: funding, last round, headcount growth, open GTM roles, layoffs and news, ending in Rising, Steady, Cooling or Unclear with the evidence.
 - **A tailored resume** for one posting, across all eight role types below. Gaps are reported, never filled.
 
----
-
 ## What the AI GTM job category holds
 
 This is a small, fast-moving category at the seam of revenue, marketing, product and AI. The assistant covers eight position types. The titles vary by company; the work is what matters, so onboarding asks you about the work.
@@ -43,8 +41,6 @@ This is a small, fast-moving category at the seam of revenue, marketing, product
 | **Marketing Engineering** | Ship the tooling and systems behind marketing and tie them to pipeline | Marketing Engineer, Technical PMM, Growth & Marketing Engineer |
 | **AEO / GEO** | Improve a brand's presence in AI-generated answers and AI search | AEO, GEO, AI Search roles |
 | **AI Transformation** | Change how a team or company works with AI, and measure the change | AI Transformation Lead, Head of AI Transformation |
-
----
 
 ## Get started
 
@@ -140,8 +136,6 @@ Only two roles passed your filters. The limit was location: most marketing-engin
 postings in the pool are US-based. Relax location, or want me to widen the title search?
 ```
 
----
-
 ## Customizing
 
 Change how roles are scored, add a company's job board, add companies to the pool, or teach the scanner a new job-board system: see [docs/CUSTOMIZING.md](docs/CUSTOMIZING.md). Building and publishing your own copy of the repo: [docs/BUILD-GUIDE.md](docs/BUILD-GUIDE.md).
@@ -154,8 +148,6 @@ Nothing in the flow is specific to GTM. The assistant, the scanner and the compa
 2. Replace the responsibility menus in `plugins/gtm-job-search/skills/find-my-job/references/responsibilities.md`.
 3. Replace the per-role title keywords in `plugins/gtm-job-search/skills/find-my-job/SKILL.md` (Step 2).
 4. Replace the company lists in `plugins/gtm-job-search/data/sources/`, then run `python3 plugins/gtm-job-search/scripts/build_pool.py`.
-
----
 
 ## License
 
