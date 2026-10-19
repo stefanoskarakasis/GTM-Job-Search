@@ -1,9 +1,0 @@
-{
-  "name": "gtm-job-search",
-  "version": "1.0.0",
-  "description": "Find GTM and marketing-engineering jobs matched to you, check they are live, research the companies, and tailor your resume. Works for beginners and 10+ year veterans.",
-  "author": {
-    "name": "Stefanos Karakasis"
-  },
-  "keywords": ["jobs", "gtm", "marketing-engineering", "resume", "careers"]
-}
