@@ -1,12 +1,14 @@
-# AT GTM Job Search
+# AI GTM Job Search
 
-Find AI GTM and marketing engineering roles that fit you, straight from company job sites. Check they are live, research the company, and tailor your resume to the one you pick.
+> Find your next role in AI GTM. Claude skills that match you to roles at companies hiring now, check they are live, research each company's momentum, and tailor your resume to the one you pick.
 >
 > Built for Claude: upload two skills in the Claude app, add the plugin in Cowork, or install it in Claude Code. No API keys, no accounts, no connectors.
 
+AI GTM is where go-to-market meets AI: agents that run outbound, answer engines that replace search, engineers embedded with customers, marketers who ship code. Job titles vary widely from one company to the next, so this tool searches by the work you want to do, not just by title.
+
 ## What it is
 
-GTM Job Search is a pair of Claude skills (packaged as a plugin): a guided job-search assistant for the roles where go-to-market meets engineering and AI. You answer five questions about the role and the work you want, and it returns a short, ranked list of open roles with the original posting date, the pay only when the posting lists it, and a plain reason each role fits you.
+AI GTM Job Search is a pair of Claude skills (packaged as a plugin): a guided job-search assistant for the roles where go-to-market meets engineering and AI. You answer five questions about the role and the work you want, and it returns a short, ranked list of open roles with the original posting date, the pay only when the posting lists it, and a plain reason each role fits you.
 
 It then researches the companies you pick, using public data on funding, headcount, layoffs and news, and rewrites your resume for one posting without inventing anything you did not do.
 
@@ -162,6 +164,7 @@ Nothing is sent anywhere except plain requests to companies' public job feeds. W
 ## Update
 
 - **Claude app:** download the new zips and upload them again over the old ones.
+- **What changed:** see the [changelog](CHANGELOG.md) and the [Releases](https://github.com/stefanoskarakasis/GTM-Job-Search/releases) page.
 
 ## License
 

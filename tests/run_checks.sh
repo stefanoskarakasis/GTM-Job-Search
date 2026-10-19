@@ -8,6 +8,8 @@ bad(){ echo "FAIL  $1"; fail=1; }
 P=plugins/gtm-job-search
 
 claude plugin validate ./$P >/dev/null 2>&1 && ok "plugin manifest validates" || bad "plugin manifest validates"
+[ -f $P/.claude-plugin/plugin.json ] && ok "plugin.json is at $P/.claude-plugin/plugin.json" || bad "plugin.json missing at $P/.claude-plugin/plugin.json"
+[ -e $P/plugins ] && bad "nested folder $P/plugins found (a folder was uploaded one level too deep)" || ok "no nested plugins folder"
 claude plugin validate .   >/dev/null 2>&1 && ok "marketplace manifest validates" || bad "marketplace manifest validates"
 python3 -m py_compile $P/scripts/fetch_ats.py $P/scripts/build_pool.py && ok "scripts compile" || bad "scripts compile"
 

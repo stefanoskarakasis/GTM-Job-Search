@@ -1,1 +1,1 @@
-Claude skills that find roles matched to you, confirm they're live and truly open where you live, research each company's momentum, and tailor your resume to the one you pick. Works in the Claude app, Cowork and Claude Code. No API keys.
+Find your next AI GTM role. Claude skills that match you to roles at companies hiring now, confirm they're live and truly open where you live, research company momentum, and tailor your resume. Works in the Claude app, Cowork and Claude Code.
