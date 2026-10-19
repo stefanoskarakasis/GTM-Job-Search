@@ -1,6 +1,6 @@
 {
   "name": "stefanos-gtm",
-  "description": "GTM and marketing-engineering career tools",
+  "description": "AI GTM career tools: find roles, research companies, tailor your resume",
   "owner": {
     "name": "Stefanos Karakasis"
   },
@@ -8,7 +8,14 @@
     {
       "name": "gtm-job-search",
       "source": "./plugins/gtm-job-search",
-      "description": "Find GTM and marketing-engineering jobs matched to you, check they are live, research the companies, and tailor your resume."
+      "description": "Find AI GTM roles matched to you from company job sites, check they are live, research each company's momentum, and tailor your resume.",
+      "keywords": [
+        "ai-gtm",
+        "gtm",
+        "job-search",
+        "resume",
+        "careers"
+      ]
     }
   ]
 }
