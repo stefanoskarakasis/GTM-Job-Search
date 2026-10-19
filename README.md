@@ -157,15 +157,6 @@ Nothing in the flow is specific to GTM. The assistant, the scanner and the compa
 
 ---
 
-## Privacy
-
-Nothing is sent anywhere except plain requests to companies' public job feeds. Where Claude can save files (Claude Code), your profile lives in `~/.gtm-job-search/` on your machine. In the Claude app you keep your profile card yourself as text. Your resume goes to Claude the way any file you share in a chat does. Say "forget me" and a saved profile is deleted.
-
-## Update
-
-- **Claude app:** download the new zips and upload them again over the old ones.
-- **What changed:** see the [changelog](CHANGELOG.md) and the [Releases](https://github.com/stefanoskarakasis/GTM-Job-Search/releases) page.
-
 ## License
 
 MIT
