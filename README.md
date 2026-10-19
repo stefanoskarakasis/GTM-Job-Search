@@ -140,10 +140,6 @@ Before opening a pull request, run `bash tests/run_checks.sh`. **Keep the honest
 
 **Nothing is sent anywhere except plain requests to companies' public job feeds.** Where Claude can save files (Claude Code), your profile lives in `~/.gtm-job-search/` on your machine. In the Claude app you keep your profile card as text. Your resume goes to Claude the way any file you share in a chat does. Say **"forget me"** and a saved profile is deleted.
 
-## Update
-
-**Claude app:** download the new zips and upload them over the old ones.
-
 ## License
 
-**MIT.** See [LICENSE](https://github.com/stefanoskarakasis/GTM-Job-Search/blob/main/LICENSE): https://github.com/stefanoskarakasis/GTM-Job-Search/blob/main/LICENSE
+MIT — see [LICENSE](https://github.com/stefanoskarakasis/GTM-Job-Search/blob/main/LICENSE).
