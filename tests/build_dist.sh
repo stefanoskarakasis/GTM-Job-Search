@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Builds the two upload-ready skill zips in dist/ for the Claude app (Customize > Skills > Upload a skill).
+# Builds the two upload-ready skill zips in dist/ for the Claude app (Settings > Capabilities > Skills > Upload skill).
 # find-my-job.zip bundles scripts/ and data/ inside the skill folder so it works as a standalone skill.
 # Run from the repo root after any change to a skill, the scripts or the company pool: bash tests/build_dist.sh
 set -eu

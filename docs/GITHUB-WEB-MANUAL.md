@@ -144,7 +144,7 @@ Open each folder on GitHub and match it to this table. All 32 must exist.
 
 ## Part 7. Test the install like a stranger (5 min)
 
-This is the only step that needs a terminal. Claude Code must be installed, version 2.1.292 or later (`claude --version`).
+This is the only step that needs a terminal. Claude Code must be installed, a recent version (tested on 2.1.303) (`claude --version`).
 
 1. Open Terminal (Mac: Cmd+Space, type Terminal) or PowerShell (Windows).
 2. Run:
