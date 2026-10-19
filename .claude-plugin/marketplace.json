@@ -1,0 +1,14 @@
+{
+  "name": "stefanos-gtm",
+  "description": "GTM and marketing-engineering career tools",
+  "owner": {
+    "name": "Stefanos Karakasis"
+  },
+  "plugins": [
+    {
+      "name": "gtm-job-search",
+      "source": "./plugins/gtm-job-search",
+      "description": "Find GTM and marketing-engineering jobs matched to you, check they are live, research the companies, and tailor your resume."
+    }
+  ]
+}
