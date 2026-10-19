@@ -34,19 +34,21 @@ Every route installs the same two skills: **`find-my-job`** and **`gtm-resume-ta
 ### Claude app (claude.ai and desktop)
 
 1. Download [find-my-job.zip](https://github.com/stefanoskarakasis/GTM-Job-Search/raw/main/dist/find-my-job.zip) and [gtm-resume-tailor.zip](https://github.com/stefanoskarakasis/GTM-Job-Search/raw/main/dist/gtm-resume-tailor.zip). **Do not unzip them.**
-2. Turn on **code execution** and **web search**: Settings, Capabilities. On Team and Enterprise plans an owner enables code execution in Organization settings.
-3. Go to **Customize, Skills**, click **+**, then **Create skill**, then **Upload a skill**. Upload each zip.
+2. Turn on **code execution** and **web search**: Settings, Capabilities. On Team and Enterprise plans an owner may need to enable code execution and Skills first.
+3. Open the **Skills** section (Settings, Capabilities, scroll to Skills, or Customize, Skills), click **Upload skill**, and select each zip.
 4. Switch both skills on, start a new chat, and say **"Find me a marketing engineering job."**
+
+If a button is labelled differently, look for the option to add or upload a skill. Anthropic changes these menus often.
 
 Claude may not keep files between chats. At the end it gives you your profile as text. **Paste it next time** to skip the onboarding.
 
 ### Claude Cowork
 
-1. Open **Customize**, then **Browse plugins**, then **Personal**, then **+**.
-2. Choose **Add marketplace from GitHub** and enter `stefanoskarakasis/GTM-Job-Search`.
+1. Open **Customize** in the sidebar, then **Plugins**.
+2. Click **Add marketplace** and enter `stefanoskarakasis/GTM-Job-Search`.
 3. Install **gtm-job-search** and say **"Find me a marketing engineering job."**
 
-If the skills do not appear, use the Claude app route above.
+On Team and Enterprise plans an owner may need to allow the repository first. If the skills do not appear, use the Claude app route above.
 
 ### Claude Code
 
@@ -54,7 +56,7 @@ If the skills do not appear, use the Claude app route above.
 claude plugin install gtm-job-search --marketplace stefanoskarakasis/GTM-Job-Search
 ```
 
-Then run `/gtm-job-search:find-my-job` or just say **"Find me a marketing engineering job."** Needs Claude Code **v2.1.292 or later**.
+Then run `/gtm-job-search:find-my-job` or just say **"Find me a marketing engineering job."** Needs a recent Claude Code (tested on **v2.1.303**).
 
 ## Start Here
 
@@ -135,6 +137,10 @@ Contributions are welcome. The most useful ones:
 - **Bugs:** open an issue with what you asked, what you got, and which Claude surface you used.
 
 Before opening a pull request, run `bash tests/run_checks.sh`. **Keep the honesty rules:** no invented facts, no estimated salaries, no aggregator links. See the [changelog](CHANGELOG.md) for what has shipped.
+
+## Privacy
+
+**Nothing is sent anywhere except plain requests to companies' public job feeds.** Where Claude can save files (Claude Code), your profile lives in `~/.gtm-job-search/` on your machine. In the Claude app you keep your profile card as text. Your resume goes to Claude the way any file you share in a chat does. Say **"forget me"** and a saved profile is deleted.
 
 ## License
 
