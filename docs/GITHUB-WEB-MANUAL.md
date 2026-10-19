@@ -2,7 +2,7 @@
 
 For someone who has never used GitHub. No terminal and no Git until the final test. About 30 minutes. At the end, anyone can install your plugin with one command.
 
-**What you need:** a free GitHub account (github.com/signup), the 28 repo files (as `GTM-Job-Search.zip` or the single files), and Chrome, Edge, Firefox or Safari.
+**What you need:** a free GitHub account (github.com/signup), the 32 repo files (as `GTM-Job-Search.zip` or the single files), and Chrome, Edge, Firefox or Safari.
 
 **Words you will see.** Repository (repo): a project folder on GitHub. Commit: save a change. Public: anyone can see it. It must be public or the install command fails for everyone else.
 
@@ -10,7 +10,7 @@ For someone who has never used GitHub. No terminal and no Git until the final te
 
 1. Unzip. Turn on hidden files.
 2. Create an empty public repo named `GTM-Job-Search`.
-3. Drag all 28 files in (hidden folders included).
+3. Drag all 32 files in (hidden folders included).
 4. Commit.
 5. Check the file list against the table below.
 6. Add the description and topics.
@@ -30,10 +30,10 @@ For someone who has never used GitHub. No terminal and no Git until the final te
 
 1. Sign in at github.com. Click the **+** at the top right, then **New repository**.
 2. **Repository name:** type exactly `GTM-Job-Search`.
-3. **Description:** paste this (221 characters):
+3. **Description:** paste this (237 characters):
 
 ```
-A Claude Code plugin that finds roles matched to you, confirms they're live and truly open where you live, researches each company's momentum, and tailors your resume to the one you pick. One-command install, no API keys.
+Claude skills that find roles matched to you, confirm they're live and truly open where you live, research each company's momentum, and tailor your resume to the one you pick. Works in the Claude app, Cowork and Claude Code. No API keys.
 ```
 
 4. Choose **Public**.
@@ -46,7 +46,7 @@ A Claude Code plugin that finds roles matched to you, confirms they're live and 
 1. Open the unzipped `GTM-Job-Search` folder (with hidden files shown) next to the GitHub page.
 2. Select everything inside it: Cmd+A (Mac) or Ctrl+A (Windows). That is 6 items: `.claude-plugin`, `README.md`, `docs`, `plugins`, `spec`, `tests`.
 3. Drag the selection onto the box that says "Drag files here". Folders keep their structure.
-4. Wait for every progress bar to finish. GitHub shows the list of files it will add. **Count them: 28.** If you see 26, the two hidden `.claude-plugin` files were skipped; add them in Part 4.
+4. Wait for every progress bar to finish. GitHub shows the list of files it will add. **Count them: 32.** If you see 30, the two hidden `.claude-plugin` files were skipped; add them in Part 4.
 5. In **Commit changes**, type `Add plugin files`. Leave "Commit directly to the main branch" selected.
 6. Click **Commit changes**.
 
@@ -105,13 +105,14 @@ Paste, do not retype. Straight quotes only. A red mark in the editor means a com
 
 ## Part 5. Check the file list (5 min)
 
-Open each folder on GitHub and match it to this table. All 28 must exist.
+Open each folder on GitHub and match it to this table. All 32 must exist.
 
 | Path | What it is |
 |---|---|
 | `.claude-plugin/marketplace.json` | Tells Claude Code this repo is a plugin marketplace |
 | `README.md` | The front page people see |
 | `docs/BUILD-GUIDE.md` | Maintainer guide |
+| `docs/CUSTOMIZING.md` | Customizing scoring, job boards, companies |
 | `docs/GITHUB-WEB-MANUAL.md` | This manual |
 | `docs/REPO-DESCRIPTION.txt` | The About text |
 | `plugins/gtm-job-search/.claude-plugin/plugin.json` | The plugin's name and version |
@@ -127,6 +128,9 @@ Open each folder on GitHub and match it to this table. All 28 must exist.
 | `plugins/gtm-job-search/skills/gtm-resume-tailor/references/position-types.md` | Eight role profiles |
 | `spec/gtm-job-search-spec-v0.5.md` | Design spec |
 | `tests/run_checks.sh` | Pre-release checks |
+| `tests/build_dist.sh` | Builds the two upload zips |
+| `dist/find-my-job.zip` | Skill upload for the Claude app, linked from the README |
+| `dist/gtm-resume-tailor.zip` | Skill upload for the Claude app, linked from the README |
 
 **Fix a missing file:** open its folder on GitHub, **Add file**, **Upload files**, drag it in, commit. If the folder does not exist, use **Create new file**, type the full path, paste the file's contents.
 

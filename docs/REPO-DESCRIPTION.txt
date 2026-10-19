@@ -1,1 +1,1 @@
-A Claude Code plugin that finds roles matched to you, confirms they're live and truly open where you live, researches each company's momentum, and tailors your resume to the one you pick. One-command install, no API keys.
+Claude skills that find roles matched to you, confirm they're live and truly open where you live, research each company's momentum, and tailor your resume to the one you pick. Works in the Claude app, Cowork and Claude Code. No API keys.

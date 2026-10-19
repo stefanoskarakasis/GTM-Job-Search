@@ -1,16 +1,10 @@
 ---
 name: gtm-resume-tailor
 version: 1.0.0
-description: >
-  Tailors a resume to one specific GTM job posting across eight position types: GTM
-  Engineering, AI Product Management, Product Marketing, RevOps, Forward-Deployed Engineer,
-  Marketing Engineering, AEO/GEO and AI Transformation. Classifies the posting, dissects it,
-  maps the candidate's real evidence to each requirement, flags gaps, and rebuilds the
-  complete resume in one pass. Trigger on: resume plus a posting, "tailor this", "rebuild my
-  resume for [company]", "which bullets for this role". Never fabricates achievements.
+description: Tailors a resume to one GTM job posting across eight position types, mapping your real evidence to the requirements, flagging gaps, and never inventing achievements. Use with a resume and a posting.
 metadata:
   author: Stefanos Karakasis
-  context: agent-embedded
+  context: claude
   derived_from: pmm-resume 3.0.0
   quality_gate: false
 last_updated: 2026-10-19

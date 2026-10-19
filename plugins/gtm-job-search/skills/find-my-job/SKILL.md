@@ -1,17 +1,10 @@
 ---
 name: find-my-job
 version: 1.0.0
-description: >
-  Finds GTM and marketing-engineering jobs for one person. A tight onboarding pins down the
-  target role, the responsibilities wanted, seniority, location and salary band. It searches a
-  default pool of forward-looking companies first, then a wider pool, reading each company's own
-  job site; checks each role is live; ranks by fit; researches the companies you pick with a
-  momentum scorecard (funding, headcount, layoffs, news); and tailors your resume with gtm-resume-tailor. Works for beginners and
-  10+ year veterans. Trigger on: "find me a job", "job search", "marketing engineer jobs",
-  "GTM engineer jobs", "AEO jobs", "match me to roles", "tailor my resume to a job".
+description: Finds GTM and marketing-engineering jobs matched to you from company job sites, checks they are live, researches the companies, and tailors your resume. Use for job search in this category.
 metadata:
   author: Stefanos Karakasis
-  context: claude-code
+  context: claude
   quality_gate: false
 last_updated: 2026-10-19
 ---
@@ -33,20 +26,29 @@ One conversation: onboard → find roles → check they are live → rank → re
 
 ## Inputs and files
 
-- **Plugin root:** two folders above this skill's base directory. If unsure, run: `find ~/.claude/plugins -path "*gtm-job-search*" -name fetch_ats.py | head -1` (the plugin root is two folders above that file's `scripts/`).
+- **Where the files are.** `data/` and `scripts/` sit inside this skill's own folder when it was uploaded as a standalone skill (Claude app), or two folders above it when installed as a plugin (Claude Code, Cowork marketplace). Check this skill's folder first, then two levels up. Below, `data/...` and `scripts/...` mean wherever you found them. If neither exists, say so and use Mode B (see Pre-flight).
 - `data/company-universe.json`: the company pool. `wave` 1 = default pool (searched first: live listings on marketingengineer.jobs, companies in GTM Jobs issues, tracker tiers 1-2); `wave` 2 = wider pool (tracker tier 3, skills.marketing, adamgtm.com GTM Index, EMEA/FinTech lists, TrueUp marketing-and-growth top companies). Each company lists its `sources`; `verify_name: true` means the name was taken from a list and not independently confirmed.
 - `references/responsibilities.md`: responsibility menus per role. `references/company-research.md`: momentum scorecard.
 - `scripts/fetch_ats.py`: reads public job feeds (Greenhouse, Lever, Ashby). Standard library Python, no install, no keys.
-- **User state, local only:** `~/.gtm-job-search/profile.md` (their profile card), `company-cache.json` (which job site each company uses), `overrides.json` (manual fixes). Create the folder if missing.
+- **User state:** `~/.gtm-job-search/profile.md` (their profile card), `company-cache.json` (which job site each company uses), `overrides.json` (manual fixes). Create the folder if missing. In the Claude app the files may not survive between chats; see Pre-flight.
 - Resume or profile: optional at the start. A file path or pasted text.
 
 ---
 
 ## Pre-flight
 
-1. Read `~/.gtm-job-search/profile.md`. If it exists, say "Welcome back. I have your profile: [one-line card]. Use it, or change something?" and skip onboarding unless they change something.
-2. Confirm `python3` runs. If not, fall back to WebSearch and WebFetch on each company's careers page, and say it will be slower.
-3. Tell them once, before searching: "I check the default pool first, then a wider pool. I read about half of these companies' job sites directly through public feeds and check the rest by hand, which is slower."
+Claude runs this skill in different places: Claude Code, the Claude desktop app or claude.ai with code execution, or a chat without code execution. Settle two things before onboarding.
+
+**1. Saved profile.**
+- If `~/.gtm-job-search/profile.md` exists, say "Welcome back. I have your profile: [one-line card]. Use it, or change something?" and skip onboarding unless they change something.
+- If there is no saved profile, or the session cannot keep files between chats (common in the Claude app), tell the person once: at the end you will give them their profile card as text to paste at the start of a future chat, so they do not repeat onboarding. If they paste a card, use it as the saved profile.
+
+**2. Which mode can run.** Test with one quick scan: `python3 scripts/fetch_ats.py scan --universe data/company-universe.json --only "Stripe" --out /tmp/preflight.json`.
+- **Mode A (scanner works).** Use the scripts as written in the steps below.
+- **Mode B (no shell, no Python, or the network check fails).** Do not stop. Use the web tools you have (web search and fetch, or a browser). Read `data/company-universe.json` with your file tools if it is available, and work wave 1 first. For each company, fetch its public job feed directly: `https://api.ashbyhq.com/posting-api/job-board/<slug>`, `https://boards-api.greenhouse.io/v1/boards/<slug>/jobs`, `https://api.lever.co/v0/postings/<slug>?mode=json`, or read its careers page. Large boards come back truncated, so also run targeted searches such as `site:jobs.ashbyhq.com "<target title>"`. Cover the strongest wave 1 companies for the person's target role and the open-web search; do not pretend to have scanned the whole pool. Say plainly what you covered and what you did not.
+- If no web tools are available either, say so and give the person the pool file and the keywords to search themselves, then offer the research and tailoring steps, which need only their input.
+
+Tell them once, before searching: "I check the default pool first, then a wider pool. About half of these companies' job sites can be read directly through public feeds; the rest I check by hand, which is slower."
 
 ---
 
@@ -54,7 +56,7 @@ One conversation: onboard → find roles → check they are live → rank → re
 
 ### Step 1: Onboard (tight: five questions, then a confirmation)
 
-Goal: get hyper-focused on the role and the work before any search. Ask one at a time. Use AskUserQuestion with options where it exists (the person can always type their own answer); otherwise ask in plain text. If they answer several at once, parse it and do not re-ask. A resume or profile, if the person has one handy, prefills the answers; ask them to correct it. Never infer target role or seniority silently.
+Goal: get hyper-focused on the role and the work before any search. Ask one at a time. Use an in-chat question tool with options where one exists (for example AskUserQuestion in Claude Code) (the person can always type their own answer); otherwise ask in plain text. If they answer several at once, parse it and do not re-ask. A resume or profile, if the person has one handy, prefills the answers; ask them to correct it. Never infer target role or seniority silently.
 
 1. **Target role.** "Which of these are you going for?" Options (pick one primary, optionally one secondary): GTM Engineering / AI Product Management / Product Marketing / RevOps / Forward-Deployed Engineer / Marketing Engineering / AEO-GEO / AI Transformation. If unsure, ask what they build or do best and propose one, then ask them to confirm. Full definitions: `gtm-resume-tailor/references/position-types.md`.
 2. **Responsibilities.** Read `references/responsibilities.md`, show the menu for their target role(s), and have them pick up to 4 they want to do and up to 3 they want to avoid. Titles lie; this is what postings get matched on.
@@ -75,7 +77,8 @@ Skills are inferred from the answers to 1-3 and the resume if given; when stated
 Always search in this order and keep the waves labelled in the output.
 
 1. **Wave 1, default pool.** Company's own hiring site first, whatever the system (Ashby, Greenhouse, Lever, Workday, a custom page):
-   `python3 <plugin root>/scripts/fetch_ats.py scan --universe <plugin root>/data/company-universe.json --wave 1 --out ~/.gtm-job-search/last-scan-w1.json`
+   `python3 scripts/fetch_ats.py scan --universe data/company-universe.json --wave 1 --out ~/.gtm-job-search/last-scan-w1.json`
+   (Mode A. In Mode B follow the Pre-flight instructions instead, still wave 1 first.)
    Always pass `--keywords` built from the confirmed target role so the shortlist is not drowned in other role types (the default regex covers all eight and returns hundreds of unrelated titles):
    - GTM Engineering: `gtm engineer|go-to-market engineer|revenue engineer|growth engineer|gtm systems|gtm architect`
    - AI Product Management: `ai product (manager|lead)|product manager.{0,20}(ai|ml|agent|llm)`
@@ -136,7 +139,7 @@ Load the `gtm-resume-tailor` skill and pass it: the profile card, the resume, an
 
 ### Step 8: Wrap up
 
-Say what was produced and where the files are, in two sentences. Offer one next step. Update `~/.gtm-job-search/profile.md` with the date of this run.
+Say what was produced and where the files are, in two sentences. Offer one next step. Update `~/.gtm-job-search/profile.md` with the date of this run. If files do not persist here, end with the profile card as a short text block and tell them to paste it next time.
 
 ---
 
@@ -154,7 +157,7 @@ Say what was produced and where the files are, in two sentences. Offer one next 
 
 - `~/.gtm-job-search/profile.md`, `company-cache.json`, `overrides.json`, `last-scan-w1.json`, `last-scan-w2.json` (local state).
 - `gtm-jobs-YYYY-MM-DD.md` (the shortlist) in the working folder.
-- A tailored resume file (.docx or .pdf) after confirmation, produced by `gtm-resume-tailor`.
+- A tailored resume file (.docx or .pdf) after confirmation, produced by `gtm-resume-tailor`. In a chat without file creation, the resume text is shown in the reply.
 
 ---
 

@@ -10,6 +10,7 @@ One repo, one marketplace, one plugin:
 GTM-Job-Search/
   README.md
   .claude-plugin/marketplace.json        # marketplace "stefanos-gtm", lists the plugin
+  dist/find-my-job.zip, gtm-resume-tailor.zip   # upload-ready skills for the Claude app (built by tests/build_dist.sh)
   docs/BUILD-GUIDE.md
   plugins/gtm-job-search/
     .claude-plugin/plugin.json           # name, version, description
@@ -39,6 +40,9 @@ Skills, agents and the manifest are discovered by folder name; there is no regis
 - `git`, and `gh` (GitHub CLI) if you want to create the repo from the terminal.
 
 ## 3. Validate locally
+
+Skill descriptions must stay at 200 characters or fewer: that is the limit for uploading a skill in the Claude app (Claude Code allows more). `tests/run_checks.sh` checks it.
+
 
 One command runs every pre-release check (manifests, scripts, pool freshness and sanity, skill size limits, stale names, a live scan of three companies, bad-input handling):
 
@@ -96,6 +100,7 @@ Sources worth re-reading regularly: marketingengineer.jobs (live listings, prior
 
 ## 6. Release and update
 
+0. Rebuild the upload zips for the Claude app: `bash tests/build_dist.sh` (or just `bash tests/run_checks.sh`, which rebuilds them). Commit the two files in `dist/`. The README links to them.
 1. Bump `version` in `plugins/gtm-job-search/.claude-plugin/plugin.json` (and in the skill front matter if you changed a skill). Without a bump, users may not receive updates.
 2. Commit and push.
 3. Tag: `git tag v1.1.0 && git push --tags`.

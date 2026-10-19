@@ -35,6 +35,19 @@ for f in glob.glob("$P/skills/*/SKILL.md"):
     assert len(re.sub(r"\s+"," ",m.group(1)))<=1024,f
 PY
 
+python3 - <<PY && ok "skill descriptions <= 200 chars (Claude app upload limit)" || bad "skill description over 200 chars"
+import re,glob
+for f in glob.glob("$P/skills/*/SKILL.md"):
+    d=re.search(r"description: (.*)\n",open(f).read()).group(1)
+    assert len(d)<=200,(f,len(d))
+PY
+
+bash tests/build_dist.sh >/dev/null
+for z in find-my-job gtm-resume-tailor; do
+  unzip -Z1 dist/$z.zip | grep -q "^$z/SKILL.md$" && ok "dist/$z.zip has $z/SKILL.md at its root folder" || bad "dist/$z.zip layout"
+done
+unzip -Z1 dist/find-my-job.zip | grep -q "^find-my-job/scripts/fetch_ats.py$" && unzip -Z1 dist/find-my-job.zip | grep -q "^find-my-job/data/company-universe.json$" && ok "find-my-job.zip bundles scripts and data" || bad "find-my-job.zip missing scripts or data"
+
 grep -rIn "gtm-job-finder\|\.gtm-job-finder" . --exclude-dir=.git --exclude-dir=tests >/dev/null && bad "stale 'gtm-job-finder' names found" || ok "no stale names"
 
 export HOME=$(mktemp -d)
