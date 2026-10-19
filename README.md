@@ -138,10 +138,6 @@ Contributions are welcome. The most useful ones:
 
 Before opening a pull request, run `bash tests/run_checks.sh`. **Keep the honesty rules:** no invented facts, no estimated salaries, no aggregator links. See the [changelog](CHANGELOG.md) for what has shipped.
 
-## Privacy
-
-**Nothing is sent anywhere except plain requests to companies' public job feeds.** Where Claude can save files (Claude Code), your profile lives in `~/.gtm-job-search/` on your machine. In the Claude app you keep your profile card as text. Your resume goes to Claude the way any file you share in a chat does. Say **"forget me"** and a saved profile is deleted.
-
 ## License
 
 MIT — see [LICENSE](https://github.com/stefanoskarakasis/GTM-Job-Search/blob/main/LICENSE).
