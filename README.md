@@ -1,6 +1,6 @@
-# GTM Job Search
+# AT GTM Job Search
 
-A job-search assistant for GTM and marketing-engineering roles that runs inside Claude Code. It reads open roles straight from companies' own job sites, checks they are still live, researches the companies, and tailors your resume to one posting.
+A job-search assistant for AT GTM roles that runs inside Claude Code. It reads open roles straight from companies' own job sites, checks they are still live, researches the companies, and tailors your resume to one posting.
 
 It is built for two kinds of people: someone starting out who does not know what a "GTM Engineer" is yet, and a marketing engineer with ten-plus years who wants a terse shortlist and nothing else.
 
