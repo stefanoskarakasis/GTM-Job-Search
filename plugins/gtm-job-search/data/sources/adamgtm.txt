@@ -1,0 +1,111 @@
+# Source: adamgtm.com GTM Index, brand names visible on /index/ on 2026-10-19 (about 110 of 868 tracked; the full brand directory is not exposed to a plain fetch). Model names, publications and analyst firms excluded. Priority 4.
+# One company per line. '#' starts a comment. A trailing '?' means the name is unconfirmed.
+Ahrefs
+AI Ark?
+AirOps
+Apify
+Apollo.io
+Attio
+Baseten
+Clarify
+Anthropic
+Clay
+Clearskies?
+Cline
+OpenAI
+Anysphere
+Customer.io
+Docket
+ElevenLabs
+Exa.ai
+FullEnrich
+Gong
+Granola
+HeyGen
+HeyReach
+Higgsfield
+HubSpot
+Instantly
+Lightfield?
+Lovable
+Midjourney
+Momentum?
+Monaco?
+n8n
+Nooks
+OpenClaw?
+OpenRouter
+Optimizely
+Peec AI
+Primer?
+Profound
+Prospeo
+Replit
+Runway
+Salesforce
+Semrush
+Similarweb
+Smartlead
+Substack
+Sumble
+Together AI
+TitanX
+Vector?
+Vercel
+Webflow
+Zapier
+ZoomInfo
+6sense
+Jev?
+Consensus
+CrewAI
+Microsoft
+Genspark
+Explorium
+Gamma
+RB2B
+Cognition
+Firecrawl
+1mind
+Rox
+Warmly
+Common Room
+xAI
+Meta
+Nvidia
+Hugging Face
+Notion
+Cloudflare
+Templafy
+Factory
+Informatica
+Workato
+Decagon
+Rippling
+Harvey
+Dust
+Default
+Beehiiv
+Daydream
+Orb
+Dreamdata
+Zoom
+Graphite
+Sitecore
+Ramp
+Kustomer
+Pocus
+Automation Anywhere
+Boost.ai
+Composio
+Resend
+Databox
+Stainless
+Intercom
+Stripe
+Sierra
+Metronome
+PostHog
+Noble?
+Wispr Flow
+Origami Agents?

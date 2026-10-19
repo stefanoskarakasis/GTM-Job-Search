@@ -1,0 +1,9 @@
+# Source: skills.marketing first-party skill authors (culture signal, not a hiring signal). Priority 4.
+# One company per line. '#' starts a comment. A trailing '?' means the name is unconfirmed.
+Profound
+Wispr Flow
+Block
+Sanity
+Apify
+Supabase
+Mailtrap

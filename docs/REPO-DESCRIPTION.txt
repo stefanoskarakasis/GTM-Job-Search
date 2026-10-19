@@ -1,0 +1,1 @@
+A Claude Code plugin that finds roles matched to you, confirms they're live and truly open where you live, researches each company's momentum, and tailors your resume to the one you pick. One-command install, no API keys.
