@@ -1,6 +1,6 @@
-# GTM Job Search
+# AT GTM Job Search
 
-> Find GTM and marketing-engineering roles that fit you, straight from company job sites. Check they are live, research the company, and tailor your resume to the one you pick.
+Find AI GTM and marketing engineering roles that fit you, straight from company job sites. Check they are live, research the company, and tailor your resume to the one you pick.
 >
 > Built for Claude: upload two skills in the Claude app, add the plugin in Cowork, or install it in Claude Code. No API keys, no accounts, no connectors.
 
@@ -84,16 +84,6 @@ Or inside a Claude Code session:
 
 Then start with `/gtm-job-search:find-my-job` or just say "find me a marketing engineering job." You can also pick the `gtm-job-search` assistant from `/agents`. Needs Claude Code v2.1.292 or later.
 
-### Where it runs
-
-| Where | Status |
-|---|---|
-| Claude Code in the terminal | Tested end to end on Linux, including the company scan |
-| Claude app (claude.ai, desktop) and Cowork | Built for it and the skill files are checked against the upload rules. Not yet tested in the app itself |
-| Other AI assistants | Not supported |
-
-How much of the company pool gets read depends on where it runs. With code execution and network access Claude scans the pool with a script. Without it Claude falls back to web search and fetching each company's job page, covers fewer companies, and tells you what it covered.
-
 ### Day-to-day commands
 
 | You say | What happens |
@@ -172,5 +162,7 @@ Nothing is sent anywhere except plain requests to companies' public job feeds. W
 ## Update
 
 - **Claude app:** download the new zips and upload them again over the old ones.
-- **Claude Code:** `claude plugin update gtm-job-search@stefanos-gtm`
-- **Cowork:** update the plugin from Customize, Browse plugins.
+
+## License
+
+MIT
