@@ -8,8 +8,8 @@ Tell Claude which AI GTM role you want. It finds matching open roles on company 
 - **Tailors your resume** to one posting across 8 role types: GTM Engineering, AI Product Management, Product Marketing, RevOps, Forward-Deployed Engineer, Marketing Engineering, AEO/GEO, AI Transformation. It never invents an achievement.
 
 ## Install
-- **Claude app:** download both zips below, then Customize, Skills, Upload a skill.
-- **Cowork:** Customize, Browse plugins, Personal, add marketplace from GitHub: stefanoskarakasis/GTM-Job-Search
+- **Claude app:** download both zips below, then Settings, Capabilities, Skills, Upload skill.
+- **Cowork:** Customize, Plugins, Add marketplace: stefanoskarakasis/GTM-Job-Search
 - **Claude Code:** claude plugin install gtm-job-search --marketplace stefanoskarakasis/GTM-Job-Search
 
 ## Known limits

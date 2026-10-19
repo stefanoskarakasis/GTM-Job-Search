@@ -35,7 +35,7 @@ Skills, agents and the manifest are discovered by folder name; there is no regis
 
 ## 2. Prerequisites
 
-- Claude Code v2.1.292+ (`claude --version`).
+- a recent Claude Code (tested on 2.1.303) (`claude --version`).
 - Python 3 (scripts use the standard library only).
 - `git`, and `gh` (GitHub CLI) if you want to create the repo from the terminal.
 
