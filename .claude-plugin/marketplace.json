@@ -1,6 +1,6 @@
 {
   "name": "stefanos-gtm",
-  "description": "AI GTM career tools: find roles, research companies, tailor your resume",
+  "description": "AI GTM job search for Claude: find roles matched to you from company job sites, check they are live, research company momentum and tailor your resume. For GTM engineers, marketing engineers, PMMs, RevOps, forward-deployed engineers, AEO/GEO and AI transformation roles.",
   "owner": {
     "name": "Stefanos Karakasis"
   },
@@ -9,13 +9,9 @@
       "name": "gtm-job-search",
       "source": "./plugins/gtm-job-search",
       "description": "Find AI GTM roles matched to you from company job sites, check they are live, research each company's momentum, and tailor your resume.",
-      "keywords": [
-        "ai-gtm",
-        "gtm",
-        "job-search",
-        "resume",
-        "careers"
-      ]
+      "keywords": ["ai-gtm", "gtm", "job-search", "resume", "careers"],
+      "category": "career",
+      "tags": ["ai-gtm", "job-search", "resume", "gtm-engineering", "marketing-engineering", "product-marketing", "revops", "careers"]
     }
   ]
 }
