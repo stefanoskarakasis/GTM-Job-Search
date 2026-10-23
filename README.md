@@ -6,35 +6,13 @@
 
 AI GTM is where go-to-market meets AI: agents that run outbound, answer engines that replace search, engineers embedded with customers, marketers who ship code. Job titles vary widely from one company to the next, so this tool searches by the **work you want to do**, not just by title.
 
-## Why AI GTM Job Search?
-
-Job boards give you listings. This gives you a **short list you can trust**: links straight from the company's own job site, roles checked live, "Remote" vetted for your region, and a resume rewritten for one posting without inventing anything.
-
-**The result:** fewer, better applications.
-
-## Who it is for
-
-- **Starting out:** you have seen "GTM Engineer" or "AI Transformation Lead" and do not know which role is yours. It explains the titles in plain language and adds a few stretch roles.
-- **10+ years in:** marketing engineer, PMM, RevOps or product leader. You get a terse shortlist and questions about scale, not basics.
-- **Switching in** from sales, marketing, product, data or engineering.
-
-## How it works
-
-1. **Onboard in five questions.** Target role, work you want and want to avoid, seniority with proof, location and work authorization, salary band. **Add your resume and it fills the answers for you.** You confirm a profile card before anything is searched.
-2. **Search the source.** Company job sites first, from a curated pool drawn from weekly AI GTM job trackers and live listings, including Anthropic, OpenAI, Clay and Harvey. LinkedIn, Indeed and TrueUp are leads only, so you **never get an aggregator link**. A wider pool and the open web follow, and every role is labelled with where it came from.
-3. **Check every role.** Each posting is re-read live: original posting date, pay **only when the posting lists it**, and every "Remote" role vetted for its real region.
-4. **See momentum before you apply.** Pick up to 3 companies and get **Rising, Steady, Cooling or Unclear**, with the funding, headcount, layoffs and news behind it.
-5. **Tailor your resume** to one posting across 8 role types. **Gaps are reported, never filled.**
-
-**Get the best results:** bring your resume, name 2-3 things you built with a number, say what work to avoid, and state your location and work authorization up front. Paste your profile card next time to skip onboarding.
-
-## Installation
+## Install
 
 Every route installs the same two skills: **`find-my-job`** and **`gtm-resume-tailor`**.
 
 ### Claude app (claude.ai and desktop)
 
-1. Download [find-my-job.zip](https://github.com/stefanoskarakasis/GTM-Job-Search/raw/main/dist/find-my-job.zip) and [gtm-resume-tailor.zip](https://github.com/stefanoskarakasis/GTM-Job-Search/raw/main/dist/gtm-resume-tailor.zip). **Do not unzip them.**
+1. Download [find-my-job.zip](https://github.com/stefanoskarakasis/GTM-Job-Search/releases/latest/download/find-my-job.zip) and [gtm-resume-tailor.zip](https://github.com/stefanoskarakasis/GTM-Job-Search/releases/latest/download/gtm-resume-tailor.zip). **Do not unzip them.**
 2. Turn on **code execution** and **web search**: Settings, Capabilities. On Team and Enterprise plans an owner may need to enable code execution and Skills first.
 3. Open the **Skills** section (Settings, Capabilities, scroll to Skills, or Customize, Skills), click **Upload skill**, and select each zip.
 4. Switch both skills on, start a new chat, and say **"Find me a marketing engineering job."**
@@ -70,24 +48,7 @@ Then run `/gtm-job-search:find-my-job` or just say **"Find me a marketing engine
 | **Change your profile** | "Change my location" |
 | **Delete your profile** | "Forget me" |
 
----
-
-## The AI GTM job category
-
-A fast-moving category at the seam of revenue, marketing, product and AI. The tool covers **8 position types**. Titles vary, so onboarding asks about the work.
-
-| Position type | The work | Titles you will see |
-|---|---|---|
-| **GTM Engineering** | Build the revenue systems: enrichment, routing, scoring, outbound automation, internal agents | GTM Engineer, Revenue Engineer, GTM Architect |
-| **AI Product Management** | Own an AI product's quality, cost and adoption | AI Product Manager, AI Product Lead |
-| **Product Marketing** | Own positioning, launches, enablement, competitive work | Product Marketing Manager, PMM |
-| **RevOps** | Make the revenue engine measurable and predictable | Revenue Operations, Sales Operations, GTM Operations |
-| **Forward-Deployed Engineer** | Get the product working inside a real customer's environment | Forward-Deployed Engineer, Deployment Engineer |
-| **Marketing Engineering** | Ship the tooling behind marketing and tie it to pipeline | Marketing Engineer, Technical PMM |
-| **AEO / GEO** | Improve a brand's presence in AI answers and AI search | AEO, GEO, AI Search roles |
-| **AI Transformation** | Change how a team works with AI, and measure it | AI Transformation Lead, Head of AI Transformation |
-
-### A sample session
+## See it work
 
 An invented person. The role is a real one read from a company job feed on 2026-10-19 and will have changed by the time you run it.
 
@@ -113,7 +74,42 @@ Only one role passed your filters. The limit was location: most roles in the poo
 Relax location, or widen the title search?
 ```
 
----
+## Why AI GTM Job Search?
+
+Job boards give you listings. This gives you a **short list you can trust**: links straight from the company's own job site, roles checked live, "Remote" vetted for your region, and a resume rewritten for one posting without inventing anything.
+
+**The result:** fewer, better applications.
+
+## Who it is for
+
+- **Starting out:** you have seen "GTM Engineer" or "AI Transformation Lead" and do not know which role is yours. It explains the titles in plain language and adds a few stretch roles.
+- **10+ years in:** marketing engineer, PMM, RevOps or product leader. You get a terse shortlist and questions about scale, not basics.
+- **Switching in** from sales, marketing, product, data or engineering.
+
+## How it works
+
+1. **Onboard in five questions.** Target role, work you want and want to avoid, seniority with proof, location and work authorization, salary band. **Add your resume and it fills the answers for you.** You confirm a profile card before anything is searched.
+2. **Search the source.** Company job sites first, from a curated pool drawn from weekly AI GTM job trackers and live listings, including Anthropic, OpenAI, Clay and Harvey. LinkedIn, Indeed and TrueUp are leads only, so you **never get an aggregator link**. A wider pool and the open web follow, and every role is labelled with where it came from.
+3. **Check every role.** Each posting is re-read live: original posting date, pay **only when the posting lists it**, and every "Remote" role vetted for its real region.
+4. **See momentum before you apply.** Pick up to 3 companies and get **Rising, Steady, Cooling or Unclear**, with the funding, headcount, layoffs and news behind it.
+5. **Tailor your resume** to one posting across 8 role types. **Gaps are reported, never filled.**
+
+**Get the best results:** bring your resume, name 2-3 things you built with a number, say what work to avoid, and state your location and work authorization up front. Paste your profile card next time to skip onboarding.
+
+## The AI GTM job category
+
+A fast-moving category at the seam of revenue, marketing, product and AI. The tool covers **8 position types**. Titles vary, so onboarding asks about the work.
+
+| Position type | The work | Titles you will see |
+|---|---|---|
+| **GTM Engineering** | Build the revenue systems: enrichment, routing, scoring, outbound automation, internal agents | GTM Engineer, Revenue Engineer, GTM Architect |
+| **AI Product Management** | Own an AI product's quality, cost and adoption | AI Product Manager, AI Product Lead |
+| **Product Marketing** | Own positioning, launches, enablement, competitive work | Product Marketing Manager, PMM |
+| **RevOps** | Make the revenue engine measurable and predictable | Revenue Operations, Sales Operations, GTM Operations |
+| **Forward-Deployed Engineer** | Get the product working inside a real customer's environment | Forward-Deployed Engineer, Deployment Engineer |
+| **Marketing Engineering** | Ship the tooling behind marketing and tie it to pipeline | Marketing Engineer, Technical PMM |
+| **AEO / GEO** | Improve a brand's presence in AI answers and AI search | AEO, GEO, AI Search roles |
+| **AI Transformation** | Change how a team works with AI, and measure it | AI Transformation Lead, Head of AI Transformation |
 
 ## Customizing
 
@@ -142,6 +138,22 @@ Before opening a pull request, run `bash tests/run_checks.sh`. **Keep the honest
 ## Privacy
 
 **Nothing is sent anywhere except plain requests to companies' public job feeds.** Where Claude can save files (Claude Code), your profile lives in `~/.gtm-job-search/` on your machine. In the Claude app you keep your profile card as text. Your resume goes to Claude the way any file you share in a chat does. Say **"forget me"** and a saved profile is deleted.
+
+## Sources and credits
+
+The company pool is built from public lists, each recorded in [`data/sources/`](plugins/gtm-job-search/data/sources/):
+
+- [GTM Jobs](https://gtmjobs.substack.com/) tracker tiers (weekly, bi-weekly, monthly), by the author
+- [marketingengineer.jobs](https://marketingengineer.jobs/) live listings
+- [adamgtm.com GTM Index](https://adamgtm.com/) brand names
+- [skills.marketing](https://skills.marketing/) skill authors
+- [TrueUp](https://www.trueup.io/) Marketing & Growth report (leads only)
+
+Roles are always read from each company's own public job feed. Spotted a missing company or a wrong job board? [Open an issue](https://github.com/stefanoskarakasis/GTM-Job-Search/issues).
+
+## Disclaimer
+
+An independent open-source project, not affiliated with or endorsed by Anthropic. It helps you search and prepare; it does not guarantee interviews or offers, and it never applies or contacts anyone for you.
 
 ## License
 
