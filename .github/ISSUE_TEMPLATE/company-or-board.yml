@@ -1,0 +1,23 @@
+name: Add or fix a company
+description: A company is missing from the pool, or its job board is not found
+title: "Company: "
+labels: ["company-pool"]
+body:
+  - type: input
+    id: company
+    attributes:
+      label: Company name
+    validations:
+      required: true
+  - type: input
+    id: board
+    attributes:
+      label: Job board link
+      description: Greenhouse, Lever or Ashby link if you know it (for example jobs.ashbyhq.com/granola).
+  - type: input
+    id: source
+    attributes:
+      label: Where the name comes from
+      description: A hiring page, tracker or post that shows they hire for AI GTM roles.
+    validations:
+      required: true
