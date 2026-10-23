@@ -16,7 +16,13 @@
     "geo",
     "forward-deployed-engineer",
     "job-search",
+    "job-hunting",
     "resume",
-    "careers"
-  ]
+    "resume-tailoring",
+    "careers",
+    "claude-skills"
+  ],
+  "homepage": "https://github.com/stefanoskarakasis/GTM-Job-Search",
+  "repository": "https://github.com/stefanoskarakasis/GTM-Job-Search",
+  "license": "MIT"
 }
