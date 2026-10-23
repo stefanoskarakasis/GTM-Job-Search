@@ -15,8 +15,3 @@ Tell Claude which AI GTM role you want. It finds matching open roles on company 
 - **Claude app:** download both zips below, then Settings, Capabilities, Skills, Upload skill.
 - **Cowork:** Customize, Plugins, Add marketplace: stefanoskarakasis/GTM-Job-Search
 - **Claude Code:** claude plugin install gtm-job-search --marketplace stefanoskarakasis/GTM-Job-Search
-
-## Known limits
-- Tested in Claude Code only. The Claude app and Cowork routes are untested.
-- About half the companies cannot be read through public job feeds and are checked by hand, which is slower.
-- The 8 tailoring profiles are working hypotheses, not validated with hiring managers.
