@@ -1,18 +1,18 @@
 ---
 name: gtm-resume-tailor
-version: 1.0.0
+version: 1.1.0
 description: Tailors a resume to one GTM job posting across eight position types, mapping your real evidence to the requirements, flagging gaps, and never inventing achievements. Use with a resume and a posting.
 metadata:
   author: Stefanos Karakasis
   context: claude
   derived_from: pmm-resume 3.0.0
   quality_gate: false
-last_updated: 2026-10-19
+last_updated: 2026-10-24
 ---
 
 # GTM Resume Tailor
 
-Takes a candidate's resume and one verified job posting, and returns a resume rebuilt for that role. It generalizes `pmm-resume` from one position type to the eight tracked by GTM Job Finder. Position-type specifics live in `references/position-types.md`; this file holds the protocol shared by all eight.
+Takes a candidate's resume and one verified job posting, and returns a resume rebuilt for that role. It generalizes `pmm-resume` from one position type to the eight tracked by the GTM Job Search plugin. Position-type specifics live in `references/position-types.md`; this file holds the protocol shared by all eight.
 
 **Tone:** a senior hiring manager in the target discipline. Direct, specific, outcome-oriented. No generic advice.
 
@@ -28,9 +28,9 @@ Takes a candidate's resume and one verified job posting, and returns a resume re
 
 ## Inputs
 
-- **Candidate profile card** (from agent onboarding): skills, seniority, location, salary band. Used for level calibration only. Salary never appears on the resume.
+- **Candidate profile card** (from agent onboarding): skills, seniority, location, salary band, and the proof check (what they built, whether it ran in production, proof grade Strong / Partial / Thin). Used for level calibration and to cap evidence labels (Step 4). Salary never appears on the resume.
 - **Resume**: PDF, DOCX or markdown, or pasted profile text.
-- **Posting**: URL and full text of one verified-live posting. If only a URL is given, fetch the text before starting.
+- **Posting**: URL and full text of one verified-live posting, plus the card context when it comes from the job search: verdict, main gap, and flags (stale, level not stated, pay problem). If only a URL is given, fetch the text before starting.
 - **Bullet bank**: optional, at `profiles/<user>/bullet-bank.md`.
 - **Defaults:** inside the agent the goal is already TAILOR, so do not re-ask it. Used standalone, confirm the goal in one sentence before starting. Confirm any inferred seniority or position type with the user before building on it.
 
@@ -38,7 +38,9 @@ Takes a candidate's resume and one verified job posting, and returns a resume re
 
 ## Pre-flight
 
-- Resume missing → ask for it. Posting text missing → fetch it or ask. Do not tailor against a guessed JD.
+- Resume missing → ask for it. Posting text missing or unreadable → fetch it or ask, and stop if it still cannot be read. Do not tailor against a guessed JD.
+- Posting older than 180 days, or title or company not matching the link → say so first and ask whether to continue.
+- Gaps already covered in the proof check are not asked again; ask only what is new.
 - Check the posting is for one of the eight position types. If it fits none, use the generic rules in Do Not Use For and say so.
 
 ---
@@ -54,8 +56,9 @@ Assign one position type and one track, using the signal words in `references/po
 
 State the result with confidence:
 ```
-Position type: Forward-Deployed Engineer (High) | Track: AI GTM | Level: Senior
+Position type: Forward-Deployed Engineer (High) | Track: AI GTM | Posting level: 2-5 years | Your level: Senior
 ```
+The posting level is only what the posting says; write "not stated" when it says nothing. Never infer it from the title or from the person's seniority.
 When GTM Engineering and FDE are both plausible, apply the distinguishing test: does the role build and own systems generally (GTM Engineering), or deploy and configure the product inside individual customer environments, usually after the sale (FDE)? If confidence is Medium or Low, ask the user which type they are targeting.
 
 ### Step 2: Load the type profile
@@ -65,17 +68,19 @@ Read only the matching section of `references/position-types.md`. It supplies th
 ### Step 3: Dissect the posting
 
 Output a four-layer table:
-1. **Must-haves**: 6-10 non-negotiables. Mark each one the resume does not currently prove.
+1. **Must-haves**: up to 10 non-negotiables, taken from the posting's own requirements. Postings often state only 3-5; list what is stated and do not pad. If you add one inferred from the responsibilities, mark it `inferred`. Mark each one the resume does not currently prove.
 2. **Cultural signals**: what kind of person the language implies ("ship fast" → execution-first; "own the stack" → systems builder).
 3. **Nice-to-haves**: differentiators.
 4. **Red flags**: places where the resume as written would disqualify the candidate.
+
+Say it plainly before tailoring when a core must-have has no evidence anywhere in the resume or the person's answers: "This resume does not prove [must-have]; tailoring can reframe what is real but cannot close that gap." Also say when the posting requires being in a place that does not match the resume's location.
 
 Also classify company stage and type (AI-native, PLG, enterprise, fintech, early-stage) because it shifts which bullet categories to lead with.
 
 ### Step 4: Map evidence and rank bullets
 
 For each must-have, find the candidate's strongest real evidence and label its level:
-- **Shipped**: built it, it ran in production, there is an outcome
+- **Shipped**: built it, it ran in production, there is an outcome. If the proof check says side project only or inherited, nothing is Shipped: label it `Contributed` or `Exposed` and name it as a side project or inherited system in the bullet
 - **Led**: owned it end to end or led the people who built it
 - **Contributed**: a defined part of something larger
 - **Exposed**: worked near it, no ownership
@@ -111,7 +116,7 @@ Weave in verbs and environment words from the posting. Delete generic claims (pa
 - **Director and above:** a scope paragraph, then Key Achievements, then Responsibilities (optional).
 - **Skills section:** order given by the type profile. Only list tools the candidate genuinely uses.
 - **Sections:** contact → summary → experience (most recent first) → education → certifications → skills. Single column, plain headings, no tables or text boxes, so applicant-tracking systems parse it.
-- No personal pronouns. Month-Year dates. Standard job titles unless the real title is distinctive and accurate.
+- No personal pronouns. Month-Year dates when the resume has months; if it has only years, keep the years and ask, never invent a month. Standard job titles unless the real title is distinctive and accurate.
 
 Show each rewritten bullet as a before/after block:
 
@@ -157,6 +162,9 @@ If the posting is more senior than the resume supports, say so plainly in the di
 - Every bullet traces to a real fact in the resume, the bullet bank or a user answer. New facts are tagged `NEW`.
 - No invented metrics, tools, customers or tenure.
 - Gaps with no real evidence are reported, not filled.
+- Claims that cannot be checked from the resume (named third-party customers, user counts that disagree with each other, years of experience longer than the roles listed) are flagged and left out until the person confirms them.
+- No evidence label is higher than the proof check supports.
+- Posting level shown as stated or "not stated", never inferred.
 - Final file built only after user confirmation.
 - Salary and personal pronouns absent from the resume.
 

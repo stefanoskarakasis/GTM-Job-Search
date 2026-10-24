@@ -65,7 +65,7 @@ Both must pass. Then test an install from the local folder before publishing:
 claude plugin install gtm-job-search --marketplace /absolute/path/to/GTM-Job-Search
 ```
 
-Open Claude Code and run `/gtm-job-search:find-my-job`. Check that onboarding asks the five questions, wave 1 scans run, and a link you are shown opens on the company's own site.
+Open Claude Code and run `/gtm-job-search:find-my-job`. Check that onboarding asks the five questions and the proof check, wave 1 scans run, and a link you are shown opens on the company's own site.
 
 ## 4. Create the repo and publish
 

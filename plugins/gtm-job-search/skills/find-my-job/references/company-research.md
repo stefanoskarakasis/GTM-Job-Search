@@ -11,7 +11,7 @@ Run for each company the person picks (max 3 per round). Every figure carries a 
 | Total funding | One source only |
 | Last round: type, amount, date, lead investor | Company newsroom, press release, TrueUp |
 | Headcount and 12-month employee growth | TrueUp, company page; if only a size band is found, say band |
-| Open jobs: total, marketing/growth/GTM count, trend | Our own scan (`fetch_ats.py`) plus the company careers page. Trend only if a prior scan exists in `~/.gtm-job-search/last-scan.json` |
+| Open jobs: total, marketing/growth/GTM count (today's count only) | Our own scan (`fetch_ats.py`) or the company's job feed, plus the careers page. No trend is reported: there is no reliable earlier count to compare against |
 | Role open since | Posting's original publish date from `detail` |
 | Layoffs | TrueUp layoffs page, layoffs.fyi, WARN notices, news search, "Employee reported" items |
 | Leadership changes | News search, company newsroom |
@@ -23,9 +23,9 @@ Plus: competitors and how the company positions itself (company site, one or two
 
 ## Verdict
 Label exactly one: **Momentum: Rising / Steady / Cooling / Unclear**, followed by two or three evidence bullets that justify it.
-- Rising: recent raise or revenue growth, headcount up, GTM roles increasing, no recent layoffs.
+- Rising: recent raise or revenue growth, headcount up, no recent layoffs. The open-role count is context, never evidence of direction.
 - Steady: stable headcount and funding, nothing alarming.
-- Cooling: layoffs, hiring freezes, funding more than 3 years old with no news, leadership churn, shrinking open-role count. Flag ⚠️ if last raise is older than 3 years.
+- Cooling: layoffs, hiring freezes, funding more than 3 years old with no news, leadership churn. Flag ⚠️ if last raise is older than 3 years.
 - Unclear: not enough public evidence. Say so; do not guess.
 
 ## Output per company

@@ -10,7 +10,11 @@ Ranking is written in plain language in `plugins/gtm-job-search/skills/find-my-j
 |---|---|---|
 | Hard filters (location, level, salary) | SKILL.md, Step 3, "Hard filters" | Edit the rules. Example: allow two levels above target for everyone, or never drop a role for salary. |
 | What counts most in fit | SKILL.md, Step 3, "Fit, in order of weight" | Reorder or add a factor. Default order: position-type match, skills and evidence against the posting's must-haves, level fit, salary fit. |
-| Labels | SKILL.md, Step 3 | Default is Strong, Good, Stretch. There are no percentage scores on purpose. |
+| Labels | SKILL.md, Step 3 | Default is ⭐ Strong, 🟢 Good, 🟡 Stretch, with rules for each. There are no percentage scores on purpose. |
+| Proof cap | SKILL.md, Step 3, "Proof cap", and Step 1, "Proof check" | A Thin proof grade caps verdicts at 🟡 and Partial at 🟢. Edit the grades or the caps. |
+| Shortlist card layout and emoji | SKILL.md, Step 5 | Fixed field order and a closed emoji set. If you add or change an emoji, update the closed-set line so each emoji keeps one meaning. |
+| How many cards in chat | SKILL.md, Step 5, "How many" | Default is 5 full cards plus a table of every role; the saved file holds all cards. Change the 5, or the table cap of 10. |
+| What the tailor receives | SKILL.md, Step 7, and `skills/gtm-resume-tailor/SKILL.md`, Inputs | The hand-off packet: profile card with proof grade, resume, full posting text, verdict, gap and flags. `tests/check_handoff.py` fails if the two skills drift apart. |
 | Remote vetting | SKILL.md, Step 4, "Remote vetting" | Edit which phrases and scopes it looks for. |
 | Which titles are scanned per target role | SKILL.md, Step 2, the per-role keyword list | Each entry is a regex passed to `fetch_ats.py scan --keywords`. Add or remove title words. |
 | What each position type is, and what proof it needs | `skills/gtm-resume-tailor/references/position-types.md` | Edit signal words, hiring lens, lead metrics and red flags per type. |

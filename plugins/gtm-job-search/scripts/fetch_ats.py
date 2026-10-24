@@ -11,6 +11,7 @@ State lives in ~/.gtm-job-search/ (company-cache.json, overrides.json). Nothing 
 except plain GET requests to the companies' public job-board feeds.
 """
 import argparse
+import html
 import json
 import os
 import re
@@ -24,7 +25,7 @@ from pathlib import Path
 STATE = Path(os.path.expanduser("~")) / ".gtm-job-search"
 CACHE = STATE / "company-cache.json"
 OVERRIDES = STATE / "overrides.json"
-UA = "gtm-job-search/1.0 (job-seeker tool; public GET only)"
+UA = "gtm-job-search/1.1 (job-seeker tool; public GET only)"
 UNKNOWN_RETRY_DAYS = 30
 
 DEFAULT_KEYWORDS = (
@@ -272,12 +273,29 @@ def cmd_resolve(a):
 
 
 def strip_html(s):
+    s = s or ""
+    if re.search(r"&lt;/?[a-z]", s):  # Greenhouse sends its HTML entity-escaped
+        s = html.unescape(s)
     s = re.sub(r"<(script|style).*?</\1>", " ", s or "", flags=re.S | re.I)
     s = re.sub(r"<br\s*/?>|</p>|</li>|</h\d>", "\n", s, flags=re.I)
     s = re.sub(r"<[^>]+>", " ", s)
     for a, b in (("&amp;", "&"), ("&nbsp;", " "), ("&lt;", "<"), ("&gt;", ">"), ("&#39;", "'"), ("&quot;", '"')):
         s = s.replace(a, b)
     return re.sub(r"[ \t]+", " ", re.sub(r"\n\s*\n+", "\n\n", s)).strip()
+
+
+PAY_RX = re.compile(r"[$€£]\s?\d[\d,.]*\s?[kK]?\s*(?:[-–—]|to)\s*[$€£]?\s?\d[\d,.]*\s?[kK]?(?:\s*(?:USD|EUR|GBP))?")
+
+
+def pay_in_text(text):
+    """Pay ranges written into the description. Greenhouse often leaves its pay field empty and puts the range
+    in the text, so 'no structured pay' must never be read as 'salary not listed'."""
+    seen = []
+    for m in PAY_RX.finditer(text or ""):
+        t = " ".join(m.group(0).split()).rstrip(".,;")
+        if t not in seen:
+            seen.append(t)
+    return seen[:5]
 
 
 def cmd_detail(a):
@@ -305,10 +323,19 @@ def cmd_detail(a):
         if not isinstance(d, dict):
             sys.exit("job not found (it may be closed)")
         ts = d.get("createdAt")
+        # Lever keeps requirements and responsibilities in "lists" and the arrangement in "workplaceType";
+        # reading only descriptionPlain would miss the must-haves a fit judgement depends on.
+        parts = [d.get("descriptionPlain") or strip_html(d.get("description"))]
+        for lst in d.get("lists") or []:
+            parts.append((lst.get("text") or "").strip() + ":\n" + strip_html(lst.get("content")))
+        if d.get("additionalPlain"):
+            parts.append(d["additionalPlain"])
         out = {"ats": a.ats, "id": d.get("id"), "title": d.get("text"),
                "location": (d.get("categories") or {}).get("location"), "url": d.get("hostedUrl"),
                "first_published": time.strftime("%Y-%m-%d", time.gmtime(ts / 1000)) if isinstance(ts, (int, float)) else None,
-               "pay": d.get("salaryRange"), "description": d.get("descriptionPlain") or strip_html(d.get("description"))}
+               "workplace": d.get("workplaceType"), "pay": d.get("salaryRange"), "pay_text": d.get("salaryDescriptionPlain"),
+               "description": "\n\n".join(p for p in parts if p)}
+    out["pay_in_text"] = pay_in_text(out.get("description"))
     print(json.dumps(out, indent=1, ensure_ascii=False))
 
 

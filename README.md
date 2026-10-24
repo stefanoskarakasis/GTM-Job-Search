@@ -62,17 +62,45 @@ Anything to avoid?                               > copywriting, paid media
 Level and 2-3 things you built or ran?           > 3 years. Lead router, GA4 rebuild, Webflow migration.
 Location?                                        > London, remote or hybrid, UK work rights
 Salary?                                          > Show me posted ranges first.
+Did you build the lead router, run it, or inherit it?                         > Built it
+Have you built anything that acts on data (workflows, enrichment, an agent)?  > Yes, in production
 
-Profile: Marketing Engineering | mid | London / remote UK. Right?  > yes
-
-1. Growth Engineer @ Granola →
-   https://jobs.ashbyhq.com/granola/494fe9a6-0144-4ebd-89a8-b8a187f93ff1
-   London | mid | ⚠️ Salary not listed | 34 days since posted
-   Fit: Good. Why: you built the lead router and the GA4 rebuild. Gap: no product-led growth experience.
-
-Only one role passed your filters. The limit was location: most roles in the pool are US-based.
-Relax location, or widen the title search?
+Profile: Marketing Engineering | mid | proof Strong | London / remote UK. Right?  > yes
 ```
+
+Then you get a shortlist like this: the top 5 as full cards in chat, a table of every role, and a saved file with all of them. Every card has the same lines in the same order, so you can scan ten roles in a minute:
+
+> # 📋 Your Marketing Engineer shortlist: London
+> *Read live from each company's own job site on Oct 19. 1 open role: 1 Good.*
+>
+> ---
+>
+> ## 🟢 1. Growth Engineer @ Granola
+> **[Apply on Granola's site →](https://jobs.ashbyhq.com/granola/494fe9a6-0144-4ebd-89a8-b8a187f93ff1)**
+>
+> - 📍 London, UK · ⚠️ Arrangement not stated
+> - 🎯 Level not stated
+> - 💰 ⚠️ Salary not listed
+> - 🕒 34 days since posted
+> - 📈 **Momentum: Rising.** $125M Series C at $1.5B in Mar 2026, no layoffs found
+>
+> ✅ **Why it matches:** you built the lead router and the GA4 rebuild.
+>
+> 🚧 **Gap:** no product-led growth experience.
+>
+> 👉 **Next move:** write up the lead router results with numbers before you apply.
+>
+> ---
+>
+> ## 🛠️ Before you apply
+>
+> **🗣️ Ask in the screen**
+> - Granola: what is the pay range?
+> - Granola: is this role remote, hybrid or onsite?
+>
+> Only one role passed your filters. The limit was location: most roles in the pool are US-based. Relax location, or research Granola in full?
+
+**How to read a card:** ⭐ Strong, 🟢 Good or 🟡 Stretch is the verdict. ⚠️ marks anything the posting did not say or that looks off, such as a role open for more than 180 days. If you skip the proof check, verdicts are capped at 🟡 Stretch, and the shortlist tells you so.
 
 ## Why AI GTM Job Search?
 
@@ -88,11 +116,11 @@ Job boards give you listings. This gives you a **short list you can trust**: lin
 
 ## How it works
 
-1. **Onboard in five questions.** Target role, work you want and want to avoid, seniority with proof, location and work authorization, salary band. **Add your resume and it fills the answers for you.** You confirm a profile card before anything is searched.
+1. **Onboard in five questions and a proof check.** Target role, work you want and want to avoid, seniority with proof, location and work authorization, salary band. Then two quick questions on what you built, because postings screen for that, not your title. **Add your resume and it fills the answers for you.** You confirm a profile card before anything is searched.
 2. **Search the source.** Company job sites first, from a curated pool drawn from weekly AI GTM job trackers and live listings, including Anthropic, OpenAI, Clay and Harvey. LinkedIn, Indeed and TrueUp are leads only, so you **never get an aggregator link**. A wider pool and the open web follow, and every role is labelled with where it came from.
 3. **Check every role.** Each posting is re-read live: original posting date, pay **only when the posting lists it**, and every "Remote" role vetted for its real region.
-4. **See momentum before you apply.** Pick up to 3 companies and get **Rising, Steady, Cooling or Unclear**, with the funding, headcount, layoffs and news behind it.
-5. **Tailor your resume** to one posting across 8 role types. **Gaps are reported, never filled.**
+4. **See momentum before you apply.** Every card carries a quick **Rising, Steady, Cooling or Unclear** read. Pick up to 3 companies for the full scorecard with the funding, headcount, layoffs and news behind it. A **Before you apply** block lists what to do, what not to do and what to ask in the screen.
+5. **Tailor your resume** to one posting across 8 role types. It receives your proof grade and the posting text, so it never calls a side project "Shipped". **Gaps are reported, never filled.**
 
 **Get the best results:** bring your resume, name 2-3 things you built with a number, say what work to avoid, and state your location and work authorization up front. Paste your profile card next time to skip onboarding.
 

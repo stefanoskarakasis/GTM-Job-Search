@@ -59,5 +59,34 @@ import json
 d=json.load(open("$HOME/s.json"))["summary"]
 assert d["resolved_to_feed"]>=2, d
 PY
+
+! grep -rnE "history\.json|fetch_ats\.py (snapshot|trend)|Seen:|too early to read|first read" $P/skills $P/scripts $P/agents >/dev/null && ok "no trend or history leftovers in skill, scripts or agent" || bad "trend or history text still present"
+python3 - <<PY && ok "lever detail returns requirement lists and workplace (regression: live Fours posting)" || bad "lever detail drops lists or workplace"
+import importlib.util,io,json,contextlib
+spec=importlib.util.spec_from_file_location("f","$P/scripts/fetch_ats.py"); f=importlib.util.module_from_spec(spec); spec.loader.exec_module(f)
+f.get_json=lambda url,timeout=15:{"id":"x","text":"GTM Engineer","descriptionPlain":"Intro.","workplaceType":"hybrid","createdAt":1757376000000,
+  "categories":{"location":"San Francisco, CA"},"hostedUrl":"https://jobs.lever.co/acme/x",
+  "lists":[{"text":"We're Looking For","content":"<li>2-5 years in data engineering</li><li>Python and SQL</li>"}],"additionalPlain":"Salary: 120-180k"}
+class A: ats="lever"; token="acme"; id="x"
+buf=io.StringIO()
+with contextlib.redirect_stdout(buf): f.cmd_detail(A)
+o=json.loads(buf.getvalue())
+assert o["workplace"]=="hybrid" and "2-5 years" in o["description"] and "Python and SQL" in o["description"] and "Salary: 120-180k" in o["description"],o
+PY
+python3 - <<PY && ok "pay written into the description is found (regression: live Vercel and Together AI postings)" || bad "pay_in_text misses pay in description"
+import importlib.util
+spec=importlib.util.spec_from_file_location("f","$P/scripts/fetch_ats.py"); f=importlib.util.module_from_spec(spec); spec.loader.exec_module(f)
+assert f.pay_in_text("The salary range is \$180,000 - \$295,000. Equity too.")==["\$180,000 - \$295,000"]
+assert f.pay_in_text("OTE \$160K-190K plus equity")==["\$160K-190K"]
+assert f.pay_in_text("raised \$43M in funding")==[] and f.pay_in_text(None)==[]
+PY
+python3 - <<PY && ok "greenhouse descriptions arrive entity-escaped and are cleaned (regression: live Together AI posting)" || bad "strip_html leaves escaped tags"
+import importlib.util
+spec=importlib.util.spec_from_file_location("f","$P/scripts/fetch_ats.py"); f=importlib.util.module_from_spec(spec); spec.loader.exec_module(f)
+o=f.strip_html("&lt;ul&gt;&lt;li&gt;3&ndash;5+ years &amp;amp; APIs&lt;/li&gt;&lt;/ul&gt;")
+assert "<" not in o and "3–5+ years" in o and "& APIs" in o, o
+assert f.strip_html("<p>A &amp; B</p>")=="A & B" and f.strip_html(None)==""
+PY
+python3 tests/check_handoff.py >/dev/null && ok "hand-off contract: what find-my-job passes is what the tailor consumes" || bad "hand-off contract"
 python3 $P/scripts/fetch_ats.py scan --universe $P/data/company-universe.json --keywords "(" 2>&1 | grep -q "invalid --keywords" && ok "bad regex is a clean error" || bad "bad regex handling"
 exit $fail
