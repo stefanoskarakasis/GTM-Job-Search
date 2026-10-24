@@ -2,9 +2,24 @@
 
 Tell Claude which AI GTM role you want. It reads open roles straight from company job sites, checks they are still live, researches each company's momentum, and tailors your resume to the one you pick. Free, MIT licensed, no API keys.
 
+## The roles it searches
+
+The same job has a different name at every company, so onboarding asks what you want to do all day, not what you want to be called. It searches eight fields:
+
+- **GTM Engineering:** build the revenue systems
+- **AI Product Management:** own an AI product's quality, cost and adoption
+- **Product Marketing:** own positioning, launches and enablement
+- **RevOps:** make the revenue engine measurable
+- **Forward-Deployed Engineer:** get the product working inside a customer's environment
+- **Marketing Engineering:** ship the tooling behind marketing
+- **AEO / GEO:** improve a brand's presence in AI answers
+- **AI Transformation:** change how a team works with AI
+
+Your resume is tailored to whichever field the posting is actually in.
+
 ![A sample shortlist card: verdict, apply link, location, level, pay, days since posted, momentum, why it matches, gap and next move](docs/images/shortlist-card.png)
 
-*Sample output: an invented person, a real posting read on Oct 19, 2026.*
+*Sample output for an invented person.*
 
 ## Install in under 2 minutes
 
@@ -27,24 +42,9 @@ claude plugin install gtm-job-search --marketplace stefanoskarakasis/GTM-Job-Sea
 
 ## Use it three ways
 
-1. **"Find me a marketing engineering job."** Five quick questions (role, the work you want and want to avoid, seniority with proof, location and work authorization, salary), plus a proof check. Add your resume and it fills most answers. You get a ranked shortlist.
+1. **"Find me a GTM engineering job."** Swap in any of the eight fields. Five quick questions (role, the work you want and want to avoid, seniority with proof, location and work authorization, salary), plus a proof check. Add your resume and it fills most answers. You get a ranked shortlist.
 2. **"Tailor my resume to this posting"** plus a link or pasted text. It skips straight to tailoring.
-3. **"Research Granola and Assured."** You get a momentum scorecard for each company.
-
-## Why AI GTM titles can't be trusted
-
-The same job has a different name at every company, so onboarding asks what you want to do all day, not what you want to be called. It searches eight fields:
-
-- **GTM Engineering:** build the revenue systems
-- **AI Product Management:** own an AI product's quality, cost and adoption
-- **Product Marketing:** own positioning, launches and enablement
-- **RevOps:** make the revenue engine measurable
-- **Forward-Deployed Engineer:** get the product working inside a customer's environment
-- **Marketing Engineering:** ship the tooling behind marketing
-- **AEO / GEO:** improve a brand's presence in AI answers
-- **AI Transformation:** change how a team works with AI
-
-Your resume is tailored to whichever field the posting is actually in.
+3. **"Research" any company you name**, up to three at a time. You get a momentum scorecard for each: funding, layoffs and news, ending in Rising, Steady, Cooling or Unclear.
 
 ## Four checks before you apply
 
@@ -57,17 +57,10 @@ Gaps between your resume and a role are reported, never filled.
 
 ## What's inside
 
-- **`find-my-job`**: onboarding, a live search of 289 companies, the four checks, and a "Before you apply" list.
-- **`gtm-resume-tailor`**: rewrites your resume for one posting across the eight fields.
-- **`scripts/`**: reads Greenhouse, Lever and Ashby job feeds. Standard library only.
-- **`docs/`**: [how it works](docs/HOW-IT-WORKS.md), [an example run](docs/EXAMPLE.md), [the category](docs/AI-GTM-CATEGORY.md), [customizing](docs/CUSTOMIZING.md), [adapting it to another field](docs/ADAPTING.md), [contributing](docs/CONTRIBUTING.md) and [sources](docs/SOURCES.md).
-
-## Good to know
-
-- **Privacy:** nothing is sent anywhere except plain requests to public job feeds. Say "forget me" and your saved profile is deleted.
-- **Limits:** built and checked in Claude Code. The Cowork and Claude app routes are untested end to end. About half the companies cannot be read through public feeds and are checked by hand.
-- **Not covered yet:** Demand Generation / Growth Marketing, Regional / International GTM, and GTM leadership (VP, Director, Head of).
-- An independent project, not affiliated with Anthropic. It never applies or contacts anyone for you.
+- **find-my-job**: onboarding, a live search of 289 companies, the four checks, and a "Before you apply" list.
+- **gtm-resume-tailor**: rewrites your resume for one posting across the eight fields.
+- **scripts**: read Greenhouse, Lever and Ashby job feeds. Standard library only.
+- **docs**: [how it works](docs/HOW-IT-WORKS.md), [an example run](docs/EXAMPLE.md), [the category](docs/AI-GTM-CATEGORY.md), [customizing](docs/CUSTOMIZING.md), [adapting it to another field](docs/ADAPTING.md), [contributing](docs/CONTRIBUTING.md) and [sources](docs/SOURCES.md).
 
 ## Want more great AI skills?
 
