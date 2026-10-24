@@ -1,9 +1,0 @@
-# alias = canonical name (applied before merging)
-Conveo.ai = Conveo
-Unify GTM = Unify
-Apollo = Apollo.io
-Origami = Origami Agents
-HubSpot (EMEA) = HubSpot
-Revolut Business = Revolut
-Wise Business = Wise
-Devin = Cognition
