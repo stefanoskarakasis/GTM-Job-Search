@@ -1,0 +1,22 @@
+# Source: gtm-jobs-tracker V3.2 FinTech GTM leaders. Priority 5.
+# One company per line. '#' starts a comment. A trailing '?' means the name is unconfirmed.
+Ramp
+Stripe
+Qonto
+Spendesk
+Pleo
+Payhawk
+Revolut
+Brex
+Airbase
+Divvy
+Emburse
+Rize
+Sift
+Monzo
+Wise
+Cleo
+Bitpanda
+Kraken
+Teya
+Finastra

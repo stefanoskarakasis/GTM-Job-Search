@@ -1,0 +1,21 @@
+# Source: marketingengineer.jobs, read 2026-10-19. Format: Name | size band | listings seen. Priority 0.
+# One company per line. '#' starts a comment. A trailing '?' means the name is unconfirmed.
+Profound | 51-200 | Forward Deployed Marketing Engineer; Marketing Engineer
+Airbnb | 5,001-10,000 | Senior SEO Strategy Lead (SEO, AEO, GEO)
+Intel | 10,000+ | Discoverability Lead (GEO/AEO/SEO)
+Figma | 1,001-5,000 | Marketing Engineer
+Stripe | 5,001-10,000 | Forward Deployed AI Accelerator, Marketing
+Toast | 5,001-10,000 | GTM Engineer, Web
+Chime | 1,001-5,000 | AEO Content Strategist
+Monster Energy Company | 1,001-5,000 | Senior Manager, Digital Commerce Marketing Technology
+Accertify | 501-1,000 | AEO and Digital Marketing Manager
+Spring Health | 1,001-5,000 | AEO & GEO Lead
+Faire | 501-1,000 | Growth Platform, Marketing Engineer
+FIGS | 201-500 | Manager, Search (SEO & AI Discovery)
+Bamboo AI | 1-10 | Founding Marketing Engineer
+ClickHouse | 501-1,000 | Product Marketing Engineer
+NBCUniversal | 10,000+ | AEO/SEO Manager
+Best Practice Institute | 11-50 | Director of Marketing Engineering & Growth
+Plaid | 1,001-5,000 | AI Marketing Technologist Lead
+PingAura | 1-10 | Marketing Engineer
+Shepherd | 51-200 | Marketing Engineer, Brokerage Growth

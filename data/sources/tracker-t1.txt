@@ -1,0 +1,17 @@
+# Source: gtm-jobs-tracker V3.2 Tier 1 (weekly). Priority 1.
+# One company per line. '#' starts a comment. A trailing '?' means the name is unconfirmed.
+Clay
+Attio
+AirOps
+Unify
+Inflection.io
+1mind
+Profound
+Agency
+Artisan AI
+Nooks
+Reevo
+HockeyStack
+Peec AI
+Granola
+Landbase
