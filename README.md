@@ -4,7 +4,7 @@ Tell Claude which AI GTM role you want. It reads open roles straight from compan
 
 ## The roles it searches
 
-The same job has a different name at every company, so onboarding asks what you want to do all day, not what you want to be called. It searches eight fields:
+The same job has a different name at every company, so onboarding asks what you want to do all day, not what you want to be called. It searches [eight fields](plugins/gtm-job-search/skills/gtm-resume-tailor/references/position-types.md):
 
 - **GTM Engineering:** build the revenue systems
 - **AI Product Management:** own an AI product's quality, cost and adoption
@@ -57,10 +57,12 @@ Gaps between your resume and a role are reported, never filled.
 
 ## What's inside
 
-- **find-my-job**: onboarding, a live search of 289 companies, the four checks, and a "Before you apply" list.
-- **gtm-resume-tailor**: rewrites your resume for one posting across the eight fields.
-- **scripts**: read Greenhouse, Lever and Ashby job feeds. Standard library only.
-- **docs**: [how it works](docs/HOW-IT-WORKS.md), [an example run](docs/EXAMPLE.md), [the category](docs/AI-GTM-CATEGORY.md), [customizing](docs/CUSTOMIZING.md), [adapting it to another field](docs/ADAPTING.md), [contributing](docs/CONTRIBUTING.md) and [sources](docs/SOURCES.md).
+- [`find-my-job`](plugins/gtm-job-search/skills/find-my-job/SKILL.md): onboarding, the live search, the four checks, and a "Before you apply" list.
+- [`gtm-resume-tailor`](plugins/gtm-job-search/skills/gtm-resume-tailor/SKILL.md): rewrites your resume for one posting across the eight fields.
+- [`position-types.md`](plugins/gtm-job-search/skills/gtm-resume-tailor/references/position-types.md): what each of the eight fields needs from you.
+- [`company-universe.json`](plugins/gtm-job-search/data/company-universe.json): the 289 companies it searches, built from [public lists](plugins/gtm-job-search/data/sources/).
+- [`fetch_ats.py`](plugins/gtm-job-search/scripts/fetch_ats.py): reads Greenhouse, Lever and Ashby job feeds. Standard library only.
+- [`docs/`](docs/): [how it works](docs/HOW-IT-WORKS.md), [an example run](docs/EXAMPLE.md), [the category](docs/AI-GTM-CATEGORY.md), [customizing](docs/CUSTOMIZING.md), [adapting it to another field](docs/ADAPTING.md), [contributing](docs/CONTRIBUTING.md) and [sources](docs/SOURCES.md).
 
 ## Want more great AI skills?
 
